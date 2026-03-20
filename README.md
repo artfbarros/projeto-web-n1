@@ -156,3 +156,298 @@ Section específica para divulgar a principal tela do nosso aplicativo.
 ~~~
 
 Section para expor as principais dúvidas dos nossos clientes e quais são as respostas para eles! :)
+
+
+CSS
+
+/* =========================================
+   Variáveis e Reset Básico
+========================================= */
+:root {
+    --verde-principal: #2E7D32;
+    --verde-claro: #E8F5E9;
+    --verde-escuro: #1B5E20;
+    --texto-escuro: #333333;
+    --texto-claro: #666666;
+    --fundo: #FAFAFA;
+    --branco: #FFFFFF;
+    --borda: #E0E0E0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+~~~~~
+Aqui nós temos a configuração inicial do nosso CSS, criando variáveis para as cores principais, texto de decoração e uma lista.
+~~~~
+
+/* =========================================
+   Cabeçalho e Navegação
+========================================= */
+header {
+    background-color: var(--branco);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header img {
+    height: 40px;
+    object-fit: contain;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav ul li a {
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--verde-principal);
+}
+
+/* Botão "Assine Já" no menu */
+nav ul li:last-child a {
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+nav ul li:last-child a:hover {
+    background-color: var(--verde-escuro);
+}
+~~~~
+Aqui nos estilizamos o cabeçalho, logo menu (bordas etc) do nosso site.
+~~~~
+
+/* =========================================
+   Seções Gerais
+========================================= */
+main section {
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    color: var(--verde-escuro);
+    margin-bottom: 2.5rem;
+}
+ranslateY(-2px);
+}
+~~~~
+Aqui definimos a cor, alinhamos o texto, para um hero mais destacado
+~~~~
+
+/* =========================================
+   Hero Section (Primeira Seção)
+========================================= */
+main section:first-of-type {
+    background-color: var(--verde-claro);
+    padding: 6rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+main section:first-of-type h1 {
+    font-size: 3rem;
+    color: var(--verde-escuro);
+    max-width: 800px;
+    line-height: 1.2;
+}
+
+main section:first-of-type p {
+    font-size: 1.2rem;
+    color: var(--texto-claro);
+    max-width: 600px;
+}
+
+main section:first-of-type > a {
+    display: inline-block;
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    margin-top: 1rem;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+main section:first-of-type > a:hover {
+    background-color: var(--verde-escuro);
+    transform: translateY(-2px);[
+}
+
+~~~~
+esse é o destaque do nosso site, com cores chamativas, adicionamos animações como hover no botão principal.
+~~~~
+
+/* =========================================
+   Como Funciona
+========================================= */
+#como-funciona {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#como-funciona h2 {
+    width: 100%;
+}
+
+#como-funciona div {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background: var(--branco);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#como-funciona h3 {
+    color: var(--verde-principal);
+    margin-bottom: 1rem;
+}
+~~~~
+essa seção nos explica exatamente como é o fluxo de processos da nossa empresa, mantemos as cores padrões.
+~~~~
+/* =========================================
+   Planos de Assinatura
+========================================= */
+#planos {
+    background-color: var(--verde-claro);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#planos h2 {
+    width: 100%;
+}
+
+#planos article {
+    background: var(--branco);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--borda);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#planos article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Destaque para o plano mais popular (o do meio) */
+#planos article:nth-of-type(2) {
+    border: 2px solid var(--verde-principal);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.15);
+}
+
+#planos article:nth-of-type(2):hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+#planos article h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#planos article > p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--verde-principal);
+    margin-bottom: 1.5rem;
+}
+
+#planos ul {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+#planos ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--borda);
+    color: var(--texto-claro);
+}
+
+#planos ul li:last-child {
+    border-bottom: none;
+}
+
+#planos article a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid var(--verde-principal);
+    color: var(--verde-principal);
+    transition: all 0.3s;
+}
+
+#planos article:nth-of-type(2) a,
+#planos article a:hover {
+    background-color: var(--verde-principal);
+    color: var(--branco);
+}
+~~~~
+Seção que destaca os diferentes planos da nossa empresa, para estilização, adicionamos um transition suave de 0.3 segundos que causa efeito de tranquilidade para o usuário.
+~~~~
